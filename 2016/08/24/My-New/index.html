@@ -1,229 +1,599 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
 
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>发表一个分页小插件 | W?F</title>
-  <meta name="description" content="Learn every day to change my future" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/css/component.css" />
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <meta name="generator" content="W?F">
-  <script src="http://static.duoshuo.com/embed.js"></script>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
   
   
   
 
   
+    
+    
+  
 
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="pages,js,分页," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这是我找到的一个分页代码，大家可以借鉴下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="发表一个分页小插件">
+<meta property="og:url" content="http://www.weiwanbin.com/2016/08/24/My-New/index.html">
+<meta property="og:site_name" content="W?F">
+<meta property="og:description" content="这是我找到的一个分页代码，大家可以借鉴下">
+<meta property="og:updated_time" content="2016-09-01T08:49:39.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="发表一个分页小插件">
+<meta name="twitter:description" content="这是我找到的一个分页代码，大家可以借鉴下">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.weiwanbin.com/2016/08/24/My-New/"/>
+
+  <title> 发表一个分页小插件 | W?F </title>
 </head>
-<body>
-<div class="container">
-    <div class="mp-pusher" id="mp-pusher">
-        <i id="scroll-up" class="fa fa-angle-up"></i>
-        <nav id="mp-menu" class="mp-menu">
-            <div class="mp-level">
-                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
-                        Home</h2></a>
-                <ul class="first-level">
-                    <li>
-                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Archive</a>
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-archive"></i>
-                                Archive</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-archive" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/08/24/My-New/">发表一个分页小插件</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/08/24/hello-world/">建立博客后的的，第一篇博客 “总结、思考、感悟、管理”</a>
-                                </li>
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Categories</a>
 
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-copy"></i>
-                                Categories</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-category" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Tags</a>
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-tags"></i>
-                                Tags</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-tag" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
-                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-                </ul>
-
-            </div>
-        </nav>
-        <div id="pjax">
-            <div class="pjax-hidden" style="display: none">
-                
-                    <a  data-pjax href="/2016/08/24/My-New/">发表一个分页小插件</a>
-                
-                    <a  data-pjax href="/2016/08/24/hello-world/">建立博客后的的，第一篇博客 “总结、思考、感悟、管理”</a>
-                
-                
-                
-                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
-            </div>
-            <nav class="nexus">
-                <li  style="border-left: 1px solid #c6d0da;">
-                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
-                </li>
-                <li ><a id="nexus-back" data-pjax href="/">W?F</a></li>
-                
-                <div id="nav-container">
-                    <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">发表一个分页小插件</a></li>
-                        <li id="navbar-toc" style="border-left: none">
-                            <a style="padding-right: 15px">
-                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
-                            </a>
-                            <div class="hidden-box">
-                                <ul id="toc"></ul>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-                
-            </nav>
-
-            <div class="scroller">
-            <div class="scroller-inner">
-
-
-<!-- -->
-<!--<body class="post-template">-->
-<!---->
   
 
-<main class="content" role="main">
-    <article class="post" >
-    <span class="post-meta">
-                  <div class="tag-tile">
-                      
-                  </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">发表一个分页小插件</h1>
 
-                    <div class="post-meta">
-                        Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2016-08-24T07:16:57.000Z"
-                              itemprop="datePublished">2016-08-24</time>
-                    </div>
-    </span>
 
-        <section class="post-content">
-            <h2 id="这是我找到的一个分页代码，大家可以借鉴下"><a href="#这是我找到的一个分页代码，大家可以借鉴下" class="headerlink" title="这是我找到的一个分页代码，大家可以借鉴下"></a>这是我找到的一个分页代码，大家可以借鉴下</h2><h3 id="css样式-部分"><a href="#css样式-部分" class="headerlink" title="css样式 部分"></a>css样式 部分</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">div,ul,li,body &#123; margin: 0; padding: 0; font-size: 12px; &#125;</div><div class="line"><span class="comment">#containet &#123;</span></div><div class="line">	display: inline-block;</div><div class="line">	border: 1px solid <span class="comment">#e1dede;</span></div><div class="line">	padding: 19px;</div><div class="line">	margin: auto;</div><div class="line">&#125;</div><div class="line"><span class="comment">#pageMain li &#123;</span></div><div class="line">	list-style: none;</div><div class="line">	line-height: 22px;</div><div class="line">&#125;</div><div class="line"><span class="comment">#pageBox &#123; padding: 10px 0 0 0; &#125;</span></div><div class="line"><span class="comment">#pageBox span &#123;</span></div><div class="line">	display: inline-block;</div><div class="line">	width: 60px;</div><div class="line">	height: 24px;</div><div class="line">	line-height: 24px;</div><div class="line">	text-align: center;</div><div class="line">	color: <span class="comment">#fff;</span></div><div class="line">	background: <span class="comment">#08a586;</span></div><div class="line">&#125;</div><div class="line"><span class="comment">#pageNav &#123; display: inline-block; &#125;</span></div><div class="line"><span class="comment">#pageNav a &#123;</span></div><div class="line">	display: inline-block;</div><div class="line">	width: 24px;</div><div class="line">	height: 24px;</div><div class="line">	line-height: 24px;</div><div class="line">	text-align: center;</div><div class="line">	color: <span class="comment">#08a586;</span></div><div class="line">	text-decoration:none;</div><div class="line">&#125;</div><div class="line"><span class="comment">#pageNav a.active,</span></div><div class="line"><span class="comment">#pageNav a:hover &#123;</span></div><div class="line">	background: <span class="comment">#08a586;</span></div><div class="line">	color: <span class="comment">#fff;</span></div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">W?F</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Learn every day to change my future</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                发表一个分页小插件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T15:16:57+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日记/" itemprop="url" rel="index">
+                    <span itemprop="name">日记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="这是我找到的一个分页代码，大家可以借鉴下"><a href="#这是我找到的一个分页代码，大家可以借鉴下" class="headerlink" title="这是我找到的一个分页代码，大家可以借鉴下"></a>这是我找到的一个分页代码，大家可以借鉴下</h2><a id="more"></a>
+<h3 id="css样式-部分"><a href="#css样式-部分" class="headerlink" title="css样式 部分"></a>css样式 部分</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">div,ul,li,body &#123; margin: 0; padding: 0; font-size: 12px; &#125;</div><div class="line"><span class="comment">#containet &#123;</span></div><div class="line">	display: inline-block;</div><div class="line">	border: 1px solid <span class="comment">#e1dede;</span></div><div class="line">	padding: 19px;</div><div class="line">	margin: auto;</div><div class="line">&#125;</div><div class="line"><span class="comment">#pageMain li &#123;</span></div><div class="line">	list-style: none;</div><div class="line">	line-height: 22px;</div><div class="line">&#125;</div><div class="line"><span class="comment">#pageBox &#123; padding: 10px 0 0 0; &#125;</span></div><div class="line"><span class="comment">#pageBox span &#123;</span></div><div class="line">	display: inline-block;</div><div class="line">	width: 60px;</div><div class="line">	height: 24px;</div><div class="line">	line-height: 24px;</div><div class="line">	text-align: center;</div><div class="line">	color: <span class="comment">#fff;</span></div><div class="line">	background: <span class="comment">#08a586;</span></div><div class="line">&#125;</div><div class="line"><span class="comment">#pageNav &#123; display: inline-block; &#125;</span></div><div class="line"><span class="comment">#pageNav a &#123;</span></div><div class="line">	display: inline-block;</div><div class="line">	width: 24px;</div><div class="line">	height: 24px;</div><div class="line">	line-height: 24px;</div><div class="line">	text-align: center;</div><div class="line">	color: <span class="comment">#08a586;</span></div><div class="line">	text-decoration:none;</div><div class="line">&#125;</div><div class="line"><span class="comment">#pageNav a.active,</span></div><div class="line"><span class="comment">#pageNav a:hover &#123;</span></div><div class="line">	background: <span class="comment">#08a586;</span></div><div class="line">	color: <span class="comment">#fff;</span></div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <h3 id="html-部分"><a href="#html-部分" class="headerlink" title="html 部分"></a>html 部分</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"containet"</span>&gt;</div><div class="line">	&lt;ul id=<span class="string">"pageMain"</span>&gt;</div><div class="line">    	&lt;li&gt;这是内容标题 第1条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第2条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第3条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第4条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第5条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第6条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第7条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第8条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第9条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第10条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第11条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第12条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第13条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第14条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第15条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第16条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第17条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第18条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第19条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第20条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第21条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第22条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第23条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第24条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第25条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第26条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第27条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第28条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第29条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是内容标题 第30条&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;div id=<span class="string">"pageBox"</span>&gt;</div><div class="line">    	&lt;span id=<span class="string">"prev"</span>&gt;上一页&lt;/span&gt;</div><div class="line">        &lt;ul id=<span class="string">"pageNav"</span>&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;span id=<span class="string">"next"</span>&gt;下一页&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div></pre></td></tr></table></figure>
 <h3 id="js-部分"><a href="#js-部分" class="headerlink" title="js 部分"></a>js 部分</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">window.onload = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	</div><div class="line">	tabPage(&#123;</div><div class="line">		pageMain : <span class="string">'pageMain'</span>,</div><div class="line">		pageNav : <span class="string">'pageNav'</span>,</div><div class="line">		pagePrev: <span class="string">'prev'</span>,</div><div class="line">		pageNext: <span class="string">'next'</span>,</div><div class="line">		curNum: 7,      //每页显示的条数</div><div class="line">		activeClass: <span class="string">'active'</span>,   //高光显示的class</div><div class="line">		ini: 0    //初始化显示的页面</div><div class="line">	&#125;);</div><div class="line">	</div><div class="line">	<span class="keyword">function</span> tabPage(tabPage)&#123;</div><div class="line">		var pageMain = document.getElementById(tabPage.pageMain);   //获取内容列表</div><div class="line">		var pageNav = document.getElementById(tabPage.pageNav);     //获取分页</div><div class="line">		var pagePrev = document.getElementById(tabPage.pagePrev);   //上一页</div><div class="line">		var pageNext = document.getElementById(tabPage.pageNext);   //下一页</div><div class="line">		</div><div class="line">		var curNum = tabPage.curNum;                                //每页显示数</div><div class="line">		var len = Math.ceil(pageMain.children.length / curNum);     //计算总页数</div><div class="line">		var pageList = <span class="string">''</span>;                                          //生成页码</div><div class="line">		var iNum = 0;                                               //当前的索引值index</div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(var i = 0; i &lt; len; i++)&#123;</div><div class="line">			pageList+=<span class="string">'&lt;a href="javascript:;"&gt;'</span>+ ( i + 1)+<span class="string">'&lt;/a&gt;'</span>;</div><div class="line">		&#125;</div><div class="line">		pageNav.innerHTML = pageList;</div><div class="line">		</div><div class="line">		pageNav.children[0].className = tabPage.activeClass;        //头一页加高亮显示</div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(var i = 0; i &lt; pageNav.children.length; i++)&#123;</div><div class="line">			pageNav.children[i].index = i;</div><div class="line">			pageNav.children[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">				<span class="keyword">for</span>(var t = 0; t &lt; pageNav.children.length; t++)&#123;</div><div class="line">					pageNav.children[t].className = <span class="string">''</span>;</div><div class="line">				&#125;</div><div class="line">				this.className = tabPage.activeClass;</div><div class="line">				iNum = this.index;</div><div class="line">				ini(iNum);</div><div class="line">			&#125;;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		</div><div class="line">		//下一页</div><div class="line">		pageNext.onclick = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			<span class="keyword">if</span>(iNum == len - 1)&#123;</div><div class="line">				alert(<span class="string">'已经是最后一页'</span>);</div><div class="line">				<span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="keyword">for</span>(var t = 0; t &lt; pageNav.children.length; t++)&#123;</div><div class="line">					pageNav.children[t].className = <span class="string">''</span>;</div><div class="line">				&#125;</div><div class="line">				iNum++;</div><div class="line">				pageNav.children[iNum].className = tabPage.activeClass;</div><div class="line">				ini(iNum);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		</div><div class="line">		//上一页</div><div class="line">		pagePrev.onclick = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			<span class="keyword">if</span>(iNum == 0)&#123;</div><div class="line">				alert(<span class="string">'当前是第一页'</span>);</div><div class="line">				<span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="keyword">for</span>(var t = 0; t &lt; pageNav.children.length; t++)&#123;</div><div class="line">					pageNav.children[t].className = <span class="string">''</span>;</div><div class="line">				&#125;</div><div class="line">				iNum--;</div><div class="line">				pageNav.children[iNum].className = tabPage.activeClass;</div><div class="line">				ini(iNum);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		</div><div class="line">		<span class="keyword">function</span> ini(iNum)&#123;</div><div class="line">			<span class="keyword">for</span>(var i = 0; i &lt; pageMain.children.length; i++)&#123;</div><div class="line">				pageMain.children[i].style.display = <span class="string">'none'</span>;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="keyword">for</span>(var i = 0; i &lt; curNum; i++)&#123;</div><div class="line">				<span class="keyword">if</span>(pageMain.children[(iNum * curNum + i)] == undefined)&#123; <span class="built_in">continue</span>; &#125;</div><div class="line">				pageMain.children[(iNum * curNum + i)].style.display = <span class="string">'block'</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		ini(iNum);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h3 id="代码还是比较简单，相信大家都能看懂。"><a href="#代码还是比较简单，相信大家都能看懂。" class="headerlink" title="代码还是比较简单，相信大家都能看懂。"></a>代码还是比较简单，相信大家都能看懂。</h3>
-        </section>
-        <hr/>
-        <nav class="pagination" style="width:auto" role="pagination">
-            
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
-            
-            <a class="share-button" data-original-title title>Share this Post</a>
-            
-            <a data-pjax class="older-posts" href="/2016/08/24/hello-world/">Next Post →</a>
-            
-        </nav>
-        <br/>
-        <br/>
-        <section id="comment">
-            <div id="comment-box"></div>
-        </section>
-
-
-    </article>
-</main>
-
-
-  
-<footer class="site-footer">
-    
-    <div class="inner">
-        <section class="copyright"><a href="/"></a> &copy; W?F 2014</section>
-        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+      
     </div>
-</footer>
-</div>
-</div><!-- /scroller -->
 
-</div><!-- /pusher -->
-</div><!-- /container -->
-</div>
+    <div>
+      
+        
 
-<!-- Easter eggs -->
+      
+    </div>
 
-<div class="egg animated">
-    <a id="close-button" href="#">X</a>
-    <div class="block">
-        <div class="loading">
-            <span class="ball1"></span>
-            <span class="ball2"></span>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pages/" rel="tag">#pages</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/分页/" rel="tag">#分页</a>
+          
         </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/24/hello-world/" rel="next" title="建立博客后的的，第一篇博客 “总结、思考、感悟、管理”">
+                <i class="fa fa-chevron-left"></i> 建立博客后的的，第一篇博客 “总结、思考、感悟、管理”
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/25/silider/" rel="prev" title="简单轮播效果">
+                简单轮播效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
   
-<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
-<script>
-    if (!window.jQuery) {
-        var script = document.createElement('script');
-        script.src = "/js/jquery.min.js";
-        document.body.appendChild(script);
-    }
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/wwb.jpg"
+               alt="W?WB" />
+          <p class="site-author-name" itemprop="name">W?WB</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#这是我找到的一个分页代码，大家可以借鉴下"><span class="nav-number">1.</span> <span class="nav-text">这是我找到的一个分页代码，大家可以借鉴下</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css样式-部分"><span class="nav-number">1.1.</span> <span class="nav-text">css样式 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html-部分"><span class="nav-number">1.2.</span> <span class="nav-text">html 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js-部分"><span class="nav-number">1.3.</span> <span class="nav-text">js 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码还是比较简单，相信大家都能看懂。"><span class="nav-number">1.4.</span> <span class="nav-text">代码还是比较简单，相信大家都能看懂。</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">W?WB</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-<script type="text/javascript" src="/js/lib.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
 
 
 
 
 
 
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
