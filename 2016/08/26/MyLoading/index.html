@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,Loading,����," />
+  <meta name="keywords" content="js,Loading,加载," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="�Լ�д�ļ��ز�����������̬����css��js�ļ�����">
+<meta name="description" content="自己写的加载插件，附带动态加载css与js文件插件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="����Loading����">
+<meta property="og:title" content="加载Loading插件">
 <meta property="og:url" content="http://www.weiwanbin.com/2016/08/26/MyLoading/index.html">
 <meta property="og:site_name" content="W?F">
-<meta property="og:description" content="�Լ�д�ļ��ز�����������̬����css��js�ļ�����">
+<meta property="og:description" content="自己写的加载插件，附带动态加载css与js文件插件">
 <meta property="og:image" content="http://www.weiwanbin.com/uploads/MyLoading/MyLoading.png">
-<meta property="og:updated_time" content="2016-09-02T09:22:24.589Z">
+<meta property="og:updated_time" content="2016-09-02T09:28:31.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="����Loading����">
-<meta name="twitter:description" content="�Լ�д�ļ��ز�����������̬����css��js�ļ�����">
+<meta name="twitter:title" content="加载Loading插件">
+<meta name="twitter:description" content="自己写的加载插件，附带动态加载css与js文件插件">
 <meta name="twitter:image" content="http://www.weiwanbin.com/uploads/MyLoading/MyLoading.png">
 
 
@@ -118,7 +118,7 @@
 
   <link rel="canonical" href="http://www.weiwanbin.com/2016/08/26/MyLoading/"/>
 
-  <title> ����Loading���� | W?F </title>
+  <title> 加载Loading插件 | W?F </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +268,7 @@
             
             
               
-                ����Loading����
+                加载Loading插件
               
             
           </h1>
@@ -294,8 +294,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/�ռ�/" itemprop="url" rel="index">
-                    <span itemprop="name">�ռ�</span>
+                  <a href="/categories/日记/" itemprop="url" rel="index">
+                    <span itemprop="name">日记</span>
                   </a>
                 </span>
 
@@ -327,14 +327,14 @@
       
 
       
-        <h2 id="�Լ�д�l��ز�����������̬����css��js�l�����"><a href="#�Լ�д�l��ز�����������̬����css��js�l�����" class="headerlink" title="�Լ�д�ļ��ز�����������̬����css��js�ļ�����"></a>�Լ�д�ļ��ز�����������̬����css��js�ļ�����</h2><!-- HTML��ʽ: ֱ���� Markdown �ļ��б�д HTML ������ -->
-<!-- ���� class="full-image" �Ǳ����� -->
+        <h2 id="自己写的加载插件，附带动态加载css与js文件插件"><a href="#自己写的加载插件，附带动态加载css与js文件插件" class="headerlink" title="自己写的加载插件，附带动态加载css与js文件插件"></a>自己写的加载插件，附带动态加载css与js文件插件</h2><!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
+<!-- 其中 class="full-image" 是必须的 -->
 <p><img src="/uploads/MyLoading/MyLoading.png" class="full-image"></p>
 <a id="more"></a>
-<h3 id="��̬����css��js�l�����-����"><a href="#��̬����css��js�l�����-����" class="headerlink" title="��̬����css��js�ļ����� ����"></a>��̬����css��js�ļ����� ����</h3><p>``` bash</p>
-<p>  // ��̬����css �� js �ļ�����<br>    $.extend({<br>        includePath: ‘’,<br>        include: function(file)<br>        {<br>            var files = typeof file == “string” ? [file] : file;<br>            var styleTag = “”;<br>            for (var i = 0; i &lt; files.length; i++)<br>            {<br>                var name = files[i].replace(/^s|$/g, “”);<br>                var att = name.split(‘.’);<br>                var ext = att[att.length - 1].toLowerCase();<br>                var isCSS = ext === “js”;<br>                var tag = !isCSS ? ‘<link>‘ : ‘<script></script>‘;<br>                var attrType = !isCSS ? ‘text/css’ : ‘text/javascript’;<br>                var attrRl= !isCSS ? ‘stylesheet’ : ‘javascript’;<br>                styleTag = $(tag);<br>                styleTag.attr(“type”, attrType);<br>                if(!isCSS){<br>                    styleTag.attr({<br>                        “rel”: attrRl,<br>                        “href”: $.includePath + name<br>                    });<br>                }else{<br>                    styleTag.attr({<br>                        “language”: attrRl,<br>                        “src”: $.includePath + name<br>                    });<br>                }<br>                $(“head”).append(styleTag);<br>            }<br>        }<br>    });</p>
-<h3 id="css��ʽ-����"><a href="#css��ʽ-����" class="headerlink" title="css��ʽ ����"></a>css��ʽ ����</h3><p>``` bash</p>
-<pre><code>/*������������ʽ*/
+<h3 id="动态加载css与js文件插件-部分"><a href="#动态加载css与js文件插件-部分" class="headerlink" title="动态加载css与js文件插件 部分"></a>动态加载css与js文件插件 部分</h3><p>``` bash</p>
+<p>  // 动态加在css 与 js 文件方法<br>    $.extend({<br>        includePath: ‘’,<br>        include: function(file)<br>        {<br>            var files = typeof file == “string” ? [file] : file;<br>            var styleTag = “”;<br>            for (var i = 0; i &lt; files.length; i++)<br>            {<br>                var name = files[i].replace(/^s|$/g, “”);<br>                var att = name.split(‘.’);<br>                var ext = att[att.length - 1].toLowerCase();<br>                var isCSS = ext === “js”;<br>                var tag = !isCSS ? ‘<link>‘ : ‘<script></script>‘;<br>                var attrType = !isCSS ? ‘text/css’ : ‘text/javascript’;<br>                var attrRl= !isCSS ? ‘stylesheet’ : ‘javascript’;<br>                styleTag = $(tag);<br>                styleTag.attr(“type”, attrType);<br>                if(!isCSS){<br>                    styleTag.attr({<br>                        “rel”: attrRl,<br>                        “href”: $.includePath + name<br>                    });<br>                }else{<br>                    styleTag.attr({<br>                        “language”: attrRl,<br>                        “src”: $.includePath + name<br>                    });<br>                }<br>                $(“head”).append(styleTag);<br>            }<br>        }<br>    });</p>
+<h3 id="css样式-部分"><a href="#css样式-部分" class="headerlink" title="css样式 部分"></a>css样式 部分</h3><p>``` bash</p>
+<pre><code>/*弹出层基本样式*/
 .wwbPop {
     width: 100%;
     height: 100%;
@@ -372,14 +372,14 @@
     height:54px;
     background:url(../images/loading.gif) no-repeat center center;
 }
-</code></pre><h3 id="html�u-����"><a href="#html�u-����" class="headerlink" title="html�ṹ ����"></a>html�ṹ ����</h3><p>``` bash</p>
+</code></pre><h3 id="html结构-部分"><a href="#html结构-部分" class="headerlink" title="html结构 部分"></a>html结构 部分</h3><p>``` bash</p>
 <p>&lt;!DOCTYPE html&gt;</p>
-<html><br><head lang="en"><br>    <meta charset="UTF-8"><br>    <title>������ʽ</title><br>    <link rel="stylesheet" href="css/rest.css"><br></head><br><body><br><br><br><script src="js/jquery-1.7.1.js"></script><br><script src="js/MyLoading.js"></script><br><script><br>     $(function(){<br>         $(“body”).MyLoading();  // ��ʾ���ز�<br>     })<br></script><br></body><br></html>
+<html><br><head lang="en"><br>    <meta charset="UTF-8"><br>    <title>加载样式</title><br>    <link rel="stylesheet" href="css/rest.css"><br></head><br><body><br><br><br><script src="js/jquery-1.7.1.js"></script><br><script src="js/MyLoading.js"></script><br><script><br>     $(function(){<br>         $(“body”).MyLoading();  // 显示加载层<br>     })<br></script><br></body><br></html>
 
 
-<h3 id="Loading����-����"><a href="#Loading����-����" class="headerlink" title="Loading���� ����"></a>Loading���� ����</h3><p>``` bash</p>
-<p> ;(function($, window, document,undefined) {<br>        //����Loading�Ĺ��캯��<br>        var Loading = function(ele, opt) {<br>            this.scollBarInit = false;<br>            this.$element = ele,<br>            // Ĭ�ϲ�������<br>            this.defaults = {<br>                thisCss:{},  // ��ʽ�޸Ĳ���<br>                MaskCss:{},  // ��ʽ�޸Ĳ���<br>                loadingCss:{},  // ��ʽ�޸Ĳ���<br>                loadShow:true,<br>                loadHide:false<br>            },<br>            this.options = $.extend({}, this.defaults, opt)<br>        };</p>
-<pre><code>    //����AreaCho�ķ���
+<h3 id="Loading插件-部分"><a href="#Loading插件-部分" class="headerlink" title="Loading插件 部分"></a>Loading插件 部分</h3><p>``` bash</p>
+<p> ;(function($, window, document,undefined) {<br>        //定义Loading的构造函数<br>        var Loading = function(ele, opt) {<br>            this.scollBarInit = false;<br>            this.$element = ele,<br>            // 默认参数设置<br>            this.defaults = {<br>                thisCss:{},  // 样式修改参数<br>                MaskCss:{},  // 样式修改参数<br>                loadingCss:{},  // 样式修改参数<br>                loadShow:true,<br>                loadHide:false<br>            },<br>            this.options = $.extend({}, this.defaults, opt)<br>        };</p>
+<pre><code>    //定义AreaCho的方法
     Loading.prototype = {
         init:function(){
             this.htmlInit();
@@ -390,7 +390,7 @@
             var that = this.$element,
                  option = this.options;
 
-            $.include([&apos;css/MyLoading.css&apos;]);   // ��̬��������css
+            $.include([&apos;css/MyLoading.css&apos;]);   // 动态加载所需css
 
             var Html = $(&apos;&lt;div class=&quot;wwbPop&quot; &gt;&apos;+
                 &apos;&lt;div class=&quot;wwbPop_Mask&quot;&gt;&lt;/div&gt;&apos;+
@@ -409,16 +409,16 @@
                 Html.find(&quot;.wwbPop_Cont&quot;).css(&quot;height&quot;,h);
             });
             Html.remove();
-            that.append(Html);   // Html ��ʼ��
+            that.append(Html);   // Html 初始化
         },
-        loadingShow:function(){  // ��ʾ����
+        loadingShow:function(){  // 显示方法
             var $this = this,
                 that = $this.$element;
             if(this.options.loadShow){
                 that.find(&quot;.wwbPop&quot;).css(&quot;display&quot;,&quot;block&quot;);
             }
         },
-        loadingHide:function(){  // ���ط���
+        loadingHide:function(){  // 隐藏方法
             var $this = this,
                 that = $this.$element;
             if(this.options.loadHide) {
@@ -428,9 +428,9 @@
     };
 
     $.fn.MyLoading = function(option){
-        //����table��ʵ��
+        //创建table的实体
         var loaDing = new Loading(this,option);
-        //�����䷽��
+        //调用其方法
         loaDing.init();
         return loaDing;
 
@@ -467,7 +467,7 @@
           
             <a href="/tags/Loading/" rel="tag">#Loading</a>
           
-            <a href="/tags/����/" rel="tag">#����</a>
+            <a href="/tags/加载/" rel="tag">#加载</a>
           
         </div>
       
@@ -558,7 +558,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -661,7 +661,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#�Լ�д�l��ز�����������̬����css��js�l�����"><span class="nav-number">1.</span> <span class="nav-text">�Լ�д�ļ��ز�����������̬����css��js�ļ�����</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#��̬����css��js�l�����-����"><span class="nav-number">1.1.</span> <span class="nav-text">��̬����css��js�ļ����� ����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css��ʽ-����"><span class="nav-number">1.2.</span> <span class="nav-text">css��ʽ ����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html�u-����"><span class="nav-number">1.3.</span> <span class="nav-text">html�ṹ ����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loading����-����"><span class="nav-number">1.4.</span> <span class="nav-text">Loading���� ����</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自己写的加载插件，附带动态加载css与js文件插件"><span class="nav-number">1.</span> <span class="nav-text">自己写的加载插件，附带动态加载css与js文件插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态加载css与js文件插件-部分"><span class="nav-number">1.1.</span> <span class="nav-text">动态加载css与js文件插件 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css样式-部分"><span class="nav-number">1.2.</span> <span class="nav-text">css样式 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html结构-部分"><span class="nav-number">1.3.</span> <span class="nav-text">html结构 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loading插件-部分"><span class="nav-number">1.4.</span> <span class="nav-text">Loading插件 部分</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
