@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,Loading,加载," />
+  <meta name="keywords" content="Loading,js,加载," />
 
 
 
@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="W?F">
 <meta property="og:description" content="自己写的加载插件，附带动态加载css与js文件插件">
 <meta property="og:image" content="http://www.weiwanbin.com/uploads/MyLoading/MyLoading.png">
-<meta property="og:updated_time" content="2016-09-02T09:28:31.634Z">
+<meta property="og:updated_time" content="2016-09-02T09:40:46.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加载Loading插件">
 <meta name="twitter:description" content="自己写的加载插件，附带动态加载css与js文件插件">
@@ -308,6 +308,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/26/MyLoading/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/26/MyLoading/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -331,40 +338,9 @@
 <!-- 其中 class="full-image" 是必须的 -->
 <p><img src="/uploads/MyLoading/MyLoading.png" class="full-image"></p>
 <a id="more"></a>
-<h3 id="动态加载css与js文件插件-部分"><a href="#动态加载css与js文件插件-部分" class="headerlink" title="动态加载css与js文件插件 部分"></a>动态加载css与js文件插件 部分</h3><p>``` bash</p>
-<p>  // 动态加在css 与 js 文件方法<br>    $.extend({<br>        includePath: ‘’,<br>        include: function(file)<br>        {<br>            var files = typeof file == “string” ? [file] : file;<br>            var styleTag = “”;<br>            for (var i = 0; i &lt; files.length; i++)<br>            {<br>                var name = files[i].replace(/^s|$/g, “”);<br>                var att = name.split(‘.’);<br>                var ext = att[att.length - 1].toLowerCase();<br>                var isCSS = ext === “js”;<br>                var tag = !isCSS ? ‘<link>‘ : ‘<script></script>‘;<br>                var attrType = !isCSS ? ‘text/css’ : ‘text/javascript’;<br>                var attrRl= !isCSS ? ‘stylesheet’ : ‘javascript’;<br>                styleTag = $(tag);<br>                styleTag.attr(“type”, attrType);<br>                if(!isCSS){<br>                    styleTag.attr({<br>                        “rel”: attrRl,<br>                        “href”: $.includePath + name<br>                    });<br>                }else{<br>                    styleTag.attr({<br>                        “language”: attrRl,<br>                        “src”: $.includePath + name<br>                    });<br>                }<br>                $(“head”).append(styleTag);<br>            }<br>        }<br>    });</p>
-<h3 id="css样式-部分"><a href="#css样式-部分" class="headerlink" title="css样式 部分"></a>css样式 部分</h3><p>``` bash</p>
-<pre><code>/*弹出层基本样式*/
-.wwbPop {
-    width: 100%;
-    height: 100%;
-    min-width:500px;
-    max-height:1024px;
-    position: absolute;
-    left:0;top:0;
-    overflow: hidden;
-    z-index: 999;
-}
-.wwbPop_Mask {
-    width: 100%;
-    height: 100%;
-    max-height:1000px;
-    background-color: rgba(0, 0, 0, 0.61);
-    opacity: 0.6;
-    filter:alpha(opacity=20);
-}
-.wwbPop_Cont {
-    width: 316px;
-    height: 134px;
-    background: url(&quot;../images/loading-bg.png&quot;) no-repeat;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -67px;
-    margin-left: -158px;
-}
-
-.wwbPop .loading{
+<h3 id="动态加载css与js文件插件-部分"><a href="#动态加载css与js文件插件-部分" class="headerlink" title="动态加载css与js文件插件 部分"></a>动态加载css与js文件插件 部分</h3><p>``` bash<br>  // 动态加在css 与 js 文件方法<br>    $.extend({<br>        includePath: ‘’,<br>        include: function(file)<br>        {<br>            var files = typeof file == “string” ? [file] : file;<br>            var styleTag = “”;<br>            for (var i = 0; i &lt; files.length; i++)<br>            {<br>                var name = files[i].replace(/^s|$/g, “”);<br>                var att = name.split(‘.’);<br>                var ext = att[att.length - 1].toLowerCase();<br>                var isCSS = ext === “js”;<br>                var tag = !isCSS ? ‘<link>‘ : ‘<script></script>‘;<br>                var attrType = !isCSS ? ‘text/css’ : ‘text/javascript’;<br>                var attrRl= !isCSS ? ‘stylesheet’ : ‘javascript’;<br>                styleTag = $(tag);<br>                styleTag.attr(“type”, attrType);<br>                if(!isCSS){<br>                    styleTag.attr({<br>                        “rel”: attrRl,<br>                        “href”: $.includePath + name<br>                    });<br>                }else{<br>                    styleTag.attr({<br>                        “language”: attrRl,<br>                        “src”: $.includePath + name<br>                    });<br>                }<br>                $(“head”).append(styleTag);<br>            }<br>        }<br>    });</p>
+<h3 id="css样式-部分"><a href="#css样式-部分" class="headerlink" title="css样式 部分"></a>css样式 部分</h3><p>``` bash<br>    /<em>弹出层基本样式</em>/<br>    .wwbPop {<br>        width: 100%;<br>        height: 100%;<br>        min-width:500px;<br>        max-height:1024px;<br>        position: absolute;<br>        left:0;top:0;<br>        overflow: hidden;<br>        z-index: 999;<br>    }<br>    .wwbPop_Mask {<br>        width: 100%;<br>        height: 100%;<br>        max-height:1000px;<br>        background-color: rgba(0, 0, 0, 0.61);<br>        opacity: 0.6;<br>        filter:alpha(opacity=20);<br>    }<br>    .wwbPop_Cont {<br>        width: 316px;<br>        height: 134px;<br>        background: url(“../images/loading-bg.png”) no-repeat;<br>        position: absolute;<br>        left: 50%;<br>        top: 50%;<br>        margin-top: -67px;<br>        margin-left: -158px;<br>    }</p>
+<pre><code>.wwbPop .loading{
     position:absolute;
     top:124px;
     left:65px;
@@ -373,12 +349,11 @@
     background:url(../images/loading.gif) no-repeat center center;
 }
 </code></pre><h3 id="html结构-部分"><a href="#html结构-部分" class="headerlink" title="html结构 部分"></a>html结构 部分</h3><p>``` bash</p>
-<p>&lt;!DOCTYPE html&gt;</p>
-<html><br><head lang="en"><br>    <meta charset="UTF-8"><br>    <title>加载样式</title><br>    <link rel="stylesheet" href="css/rest.css"><br></head><br><body><br><br><br><script src="js/jquery-1.7.1.js"></script><br><script src="js/MyLoading.js"></script><br><script><br>     $(function(){<br>         $(“body”).MyLoading();  // 显示加载层<br>     })<br></script><br></body><br></html>
+<body><br><script src="js/jquery-1.7.1.js"></script><br><script src="js/MyLoading.js"></script><br><script><br>     $(function(){<br>         $(“body”).MyLoading();  // 显示加载层<br>     })<br></script><br></body>
 
 
-<h3 id="Loading插件-部分"><a href="#Loading插件-部分" class="headerlink" title="Loading插件 部分"></a>Loading插件 部分</h3><p>``` bash</p>
-<p> ;(function($, window, document,undefined) {<br>        //定义Loading的构造函数<br>        var Loading = function(ele, opt) {<br>            this.scollBarInit = false;<br>            this.$element = ele,<br>            // 默认参数设置<br>            this.defaults = {<br>                thisCss:{},  // 样式修改参数<br>                MaskCss:{},  // 样式修改参数<br>                loadingCss:{},  // 样式修改参数<br>                loadShow:true,<br>                loadHide:false<br>            },<br>            this.options = $.extend({}, this.defaults, opt)<br>        };</p>
+
+<h3 id="Loading插件-部分"><a href="#Loading插件-部分" class="headerlink" title="Loading插件 部分"></a>Loading插件 部分</h3><p>``` bash<br> ;(function($, window, document,undefined) {<br>        //定义Loading的构造函数<br>        var Loading = function(ele, opt) {<br>            this.scollBarInit = false;<br>            this.$element = ele,<br>            // 默认参数设置<br>            this.defaults = {<br>                thisCss:{},  // 样式修改参数<br>                MaskCss:{},  // 样式修改参数<br>                loadingCss:{},  // 样式修改参数<br>                loadShow:true,<br>                loadHide:false<br>            },<br>            this.options = $.extend({}, this.defaults, opt)<br>        };</p>
 <pre><code>    //定义AreaCho的方法
     Loading.prototype = {
         init:function(){
@@ -463,9 +438,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag">#js</a>
-          
             <a href="/tags/Loading/" rel="tag">#Loading</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
           
             <a href="/tags/加载/" rel="tag">#加载</a>
           
@@ -504,9 +479,16 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/26/MyLoading/"
+           data-title="加载Loading插件" data-url="http://www.weiwanbin.com/2016/08/26/MyLoading/">
+      </div>
     
   </div>
 
@@ -782,9 +764,30 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"weiwanbiin"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
 
 
 
